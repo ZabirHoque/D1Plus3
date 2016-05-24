@@ -1,0 +1,7 @@
+.vs
+Bin
+ipch
+*.db
+*.opendb
+*.user
+*.suo

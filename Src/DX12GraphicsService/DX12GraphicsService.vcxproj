@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\Props\Configurations.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{15375EF7-1836-40B1-A200-0BFAE489D810}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DX12GraphicsService</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="..\..\Props\DLLSettings.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Props\ProjectSettings.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\..\Props\CompileBase.props" />
+    <Import Project="..\..\Props\LinkBase.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="DLLMain.cpp" />
+  </ItemGroup>
+  <Import Project="..\..\Props\PCH.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

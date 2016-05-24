@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemDefinitionGroup>
+		<ClCompile>
+			<PrecompiledHeader>Use</PrecompiledHeader>
+			<WarningLevel>EnableAllWarnings</WarningLevel>
+			<PreprocessorDefinitions>_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<SDLCheck>true</SDLCheck>
+			<TreatWarningAsError>true</TreatWarningAsError>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+			<StringPooling>true</StringPooling>
+			<FunctionLevelLinking>false</FunctionLevelLinking>
+			<EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+			<FloatingPointModel>Fast</FloatingPointModel>
+			<DisableLanguageExtensions>false</DisableLanguageExtensions>
+			<EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+			<RuntimeTypeInfo>false</RuntimeTypeInfo>
+			<OpenMPSupport>false</OpenMPSupport>
+			<PrecompiledHeaderFile>$(ProjectName)PCH.h</PrecompiledHeaderFile>
+			<PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)PCH.pch</PrecompiledHeaderOutputFile>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+            <!-- 4710 - 'function' : function not inlined -->
+            <DisableSpecificWarnings>4710</DisableSpecificWarnings>
+		</ClCompile>
+	</ItemDefinitionGroup>
+    
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+    
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<ClCompile>
+			<Optimization>Full</Optimization>
+			<IntrinsicFunctions>true</IntrinsicFunctions>
+			<PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+			<FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+		</ClCompile>
+	</ItemDefinitionGroup>
+</Project>

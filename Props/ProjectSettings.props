@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<IncludePath>$(ProjectDir)\Private\;$(ProjectDir)\..\GlobalIncludes\;$(IncludePath)</IncludePath>
+		<OutDir>$(SolutionDir)Bin\$(Platform)_$(Configuration)\</OutDir>
+		<IntDir>$(SolutionDir)\Bin\Intermediate\$(ProjectName)\$(Platform)_$(Configuration)\</IntDir>
+	</PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<LinkIncremental>true</LinkIncremental>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<LinkIncremental>false</LinkIncremental>
+	</PropertyGroup>
+</Project>
